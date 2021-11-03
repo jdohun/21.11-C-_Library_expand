@@ -123,7 +123,7 @@ namespace 도서_관리_닷넷프레임 {
                             book.IsBorrowed = false;
                             book.BorrowedAt = new DateTime();
 
-                            Record record = DataManager.Records.Single(x => x.Isbn == textBox2.Text && x.Id == user.Id);
+                            Record record = DataManager.Records.Single(x => x.Isbn == textBox2.Text && x.Id == user.Id && x.BookReturned == false);
                             record.BookReturned = true;
 
                             dataGridView1.DataSource = null;

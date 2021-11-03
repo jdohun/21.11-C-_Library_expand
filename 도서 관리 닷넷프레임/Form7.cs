@@ -131,7 +131,7 @@ namespace 도서_관리_닷넷프레임 {
             else {
                 try {
                     Book book = DataManager.Books.Single(x => x.Isbn == textBox2.Text);
-                    Record record = DataManager.Records.Single(x => x.Isbn == textBox2.Text && x.Id == user.Id);
+                    Record record = DataManager.Records.Single(x => x.Isbn == textBox2.Text && x.Id == user.Id && x.BookReturned == false);
 
                     if ( book.IsBorrowed ) {
                         if ( user.Id == book.UserId ) {   // 대여자와 사용자가 일치하는지 확인
